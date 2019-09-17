@@ -35,9 +35,6 @@ func (srv *ServerInfo) Read(decoder *binary.Decoder) (err error) {
 		if err != nil {
 			return fmt.Errorf("could not read server timezone: %v", err)
 		}
-		if srv.Timezone, err = time.LoadLocation(timezone); err != nil {
-			return fmt.Errorf("could not load time location: %v", err)
-		}
 	}
 	return nil
 }
